@@ -28,7 +28,7 @@ const LeaveManagement = ({ leaveRequests = [], onDataChange }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:8080/api/teacher/leave-requests/${reviewModal.request.id}/review`,
+        `https://student-attandance-system-backend-production.up.railway.app/api/teacher/leave-requests/${reviewModal.request.id}/review`,
         reviewData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -48,7 +48,7 @@ const LeaveManagement = ({ leaveRequests = [], onDataChange }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:8080/api/teacher/leave-requests/${requestId}/review`,
+        `https://student-attandance-system-backend-production.up.railway.app/api/teacher/leave-requests/${requestId}/review`,
         { status, teacherComment: '' },
         { headers: { Authorization: `Bearer ${token}` } }
       );

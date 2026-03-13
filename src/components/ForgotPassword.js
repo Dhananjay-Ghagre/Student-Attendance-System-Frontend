@@ -17,7 +17,7 @@ const ForgotPassword = ({ onBack }) => {
     setIsLoading(true);
     
     try {
-      await axios.post('http://localhost:8080/api/auth/forgot-password', { email });
+      await axios.post('https://student-attandance-system-backend-production.up.railway.app/api/auth/forgot-password', { email });
       toast.success('OTP sent to your email');
       setStep(2);
     } catch (error) {
@@ -48,7 +48,7 @@ const ForgotPassword = ({ onBack }) => {
     setIsLoading(true);
     
     try {
-      await axios.post('http://localhost:8080/api/auth/reset-password', {
+      await axios.post('https://student-attandance-system-backend-production.up.railway.app/api/auth/reset-password', {
         email,
         otp,
         newPassword

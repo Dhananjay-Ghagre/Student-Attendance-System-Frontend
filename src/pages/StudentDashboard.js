@@ -213,7 +213,7 @@ const StudentDashboard = () => {
   const loadLeaveRequests = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:8080/api/student/leave-requests', {
+      const response = await axios.get('https://student-attandance-system-backend-production.up.railway.app/api/student/leave-requests', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLeaveRequests(response.data);

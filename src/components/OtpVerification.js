@@ -45,7 +45,7 @@ const OtpVerification = ({ email, type, onVerify, onBack, registrationData }) =>
     setIsVerifying(true);
     try {
       if (type === 'REGISTRATION') {
-        await axios.post('http://localhost:8080/api/auth/verify-registration', {
+        await axios.post('https://student-attandance-system-backend-production.up.railway.app/api/auth/verify-registration', {
           email,
           otp: otpString,
           ...registrationData
@@ -67,7 +67,7 @@ const OtpVerification = ({ email, type, onVerify, onBack, registrationData }) =>
   const handleResend = async () => {
     setIsResending(true);
     try {
-      await axios.post('http://localhost:8080/api/auth/resend-otp', {
+      await axios.post('https://student-attandance-system-backend-production.up.railway.app/api/auth/resend-otp', {
         email,
         type
       });

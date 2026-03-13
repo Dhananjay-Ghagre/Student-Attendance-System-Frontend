@@ -21,7 +21,7 @@ const ProfileCompletion = ({ onComplete }) => {
     try {
       console.log('Attempting to load courses from public endpoint...');
       // Use public endpoint that doesn't require authentication
-      const response = await axios.get('http://localhost:8080/api/public/courses');
+      const response = await axios.get('https://student-attandance-system-backend-production.up.railway.app/api/public/courses');
       console.log('Courses response:', response.data);
       setAvailableCourses(response.data);
     } catch (error) {
@@ -31,7 +31,7 @@ const ProfileCompletion = ({ onComplete }) => {
       // Try admin endpoint as fallback
       try {
         console.log('Trying admin endpoint as fallback...');
-        const adminResponse = await axios.get('http://localhost:8080/api/admin/courses');
+        const adminResponse = await axios.get('https://student-attandance-system-backend-production.up.railway.app/api/admin/courses');
         console.log('Admin courses response:', adminResponse.data);
         setAvailableCourses(adminResponse.data);
       } catch (adminError) {
