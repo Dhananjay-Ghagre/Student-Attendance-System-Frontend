@@ -77,7 +77,7 @@ All endpoints follow this pattern:
 ```
 
 **Roles:**
-- `auth` - Authentication endpoints
+- `auth` - Authentication endpoints (login, register, forgot-password, etc.)
 - `student` - Student-specific endpoints
 - `teacher` - Teacher-specific endpoints
 - `admin` - Admin-specific endpoints
@@ -86,11 +86,18 @@ All endpoints follow this pattern:
 **Examples:**
 ```
 POST {API_BASE_URL}/api/auth/login
+POST {API_BASE_URL}/api/auth/register
 GET  {API_BASE_URL}/api/student/attendance
 POST {API_BASE_URL}/api/teacher/attendance
 GET  {API_BASE_URL}/api/admin/users
 GET  {API_BASE_URL}/api/public/courses
 ```
+
+**Important:** All endpoints MUST include the `/api` prefix to match the Spring Boot backend controller mappings:
+- `@RequestMapping("/api/auth")`
+- `@RequestMapping("/api/admin")`
+- `@RequestMapping("/api/teacher")`
+- `@RequestMapping("/api/student")`
 
 ## Security Notes
 
